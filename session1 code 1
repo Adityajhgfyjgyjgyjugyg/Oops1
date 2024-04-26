@@ -1,0 +1,51 @@
+// You are using Java
+import java.util.*;
+class Employee{
+    private String employeeName;
+    private int employeeId;
+    private String employeeDepartment;
+    
+    Employee(String employeeName,int employeeId,String employeeDepartment){
+        this.employeeName=employeeName;
+        this.employeeId=employeeId;
+        this.employeeDepartment=employeeDepartment;
+    }
+    public String getEmployeeName() {
+        return this.employeeName;
+    }
+    public int getEmployeeId(){
+        return this.employeeId;
+    }
+    public String getEmployeeDepartment(){
+        return this.employeeDepartment;
+    }
+    public String toString(){
+        return String.format("Employee[employeeName=%s,employeeId=%d,employeeDepartment=%s]",this.employeeName,this.employeeId,this.employeeDepartment);
+    }
+    public static void main(String [] args)
+    {
+      Scanner sc= new Scanner(System.in);
+      
+      int n= sc.nextInt();
+      sc.nextLine();
+      ArrayList arrL= new ArrayList<>();
+    for(int j=0;j<n*3;j+=3){
+       
+        String employeeName=sc.nextLine();
+        int employeeId=Integer.parseInt(sc.nextLine());
+        String employeeDepartment=sc.nextLine();
+        arrL.add(employeeName);
+        arrL.add(employeeId);
+        arrL.add(employeeDepartment);
+    }
+    System.out.println("List of All Employees");
+    for(int j=0;j<n*3;j+=3){
+        Employee e=new Employee((String)arrL.get(j),(Integer)arrL.get(j+1),(String)arrL.get(j+2));
+        System.out.println(e.toString());
+    }
+        
+    
+  }    
+        
+        
+}
